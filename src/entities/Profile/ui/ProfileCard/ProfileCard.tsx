@@ -1,23 +1,37 @@
 import React from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-
-import { useSelector } from 'react-redux';
-import { getProfileData } from 'entities/Profile/model/selectors/getProfileData/getProfileData';
-import { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError';
-import { getProfileIsLoading } from 'entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading';
-import { Text } from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { Profile } from 'entities/Profile';
+import { Loader } from 'shared/ui/Loader/Loader';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
     className?: string;
+    data?: Profile;
+    error?: string;
+    isLoading?: boolean;
 }
 
-export const ProfileCard = ({ className }: ProfileCardProps) => {
-    const data = useSelector(getProfileData);
-    const error = useSelector(getProfileError);
-    const isLoading = useSelector(getProfileIsLoading);
+export const ProfileCard = ({
+    className, data, error, isLoading,
+}: ProfileCardProps) => {
+    if (isLoading) {
+        return (
+            <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+                <Loader />
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+                <Text title="Some error" theme={TextTheme.ERROR} align={TextAlign.CENTER} />
+            </div>
+        );
+    }
 
     return (
         <div className={classNames(cls.ProfileCard, {}, [className])}>
