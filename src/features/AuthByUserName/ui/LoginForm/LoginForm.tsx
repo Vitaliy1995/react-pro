@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect } from 'react';
+import React, { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
@@ -41,7 +41,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();
         }
-    }, [dispatch, password, username]);
+    }, [dispatch, onSuccess, password, username]);
 
     return (
         <DynamicModuleLoader reducers={initialReducers}>

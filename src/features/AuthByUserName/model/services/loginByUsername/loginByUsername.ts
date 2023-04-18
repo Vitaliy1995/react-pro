@@ -21,11 +21,9 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
             dispatch(userActions.setAuthData(response.data));
 
-            extra.navigate('/about');
-
             return response.data;
         } catch (e) {
-            console.log(e.message);
+            console.log((e as Error)?.message);
             return rejectWithValue('Вы ввели неверный логин или пароль');
         }
     },
