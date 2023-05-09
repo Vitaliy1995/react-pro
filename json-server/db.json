@@ -11,18 +11,71 @@
       "userId": "2"
     }
   ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "Js news",
+      "subtitle": "watsup",
+      "img": "",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "type": ["IT"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Title",
+          "paragraphs": [
+            "1",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "CODE": "var_dump('Hello world');"
+        },
+        {
+          "id": "5",
+          "type": "IMAGE",
+          "src": ""
+        }
+      ]
+    }
+  ],
   "comments": [
     {
       "id": "1",
-      "body": "some comment",
-      "postId": "1"
+      "text": "some comment",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "text": "some comment new",
+      "articleId": "1",
+      "userId": "2"
+    },
+    {
+      "id": "3",
+      "text": "some comment fasfasfsaf",
+      "articleId": "1",
+      "userId": "1"
     }
   ],
   "users": [
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "role": "ADMIN"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "123",
+      "role": "USER"
     }
   ],
   "profile": {
