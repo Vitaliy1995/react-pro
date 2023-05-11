@@ -69,13 +69,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://gamebomb.ru/files/galleries/001/a/a5/410545.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://gamebomb.ru/files/galleries/001/a/a5/410545.jpg"
     }
   ],
   "profile": {
