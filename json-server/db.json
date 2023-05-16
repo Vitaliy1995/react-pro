@@ -80,14 +80,28 @@
       "avatar": "https://gamebomb.ru/files/galleries/001/a/a5/410545.jpg"
     }
   ],
-  "profile": {
-    "first": "Vitaliy",
-    "lastname": "Shevchuk",
-    "age": 27,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://gamebomb.ru/files/galleries/001/a/a5/410545.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Vitaliy",
+      "lastname": "Shevchuk",
+      "age": 27,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://gamebomb.ru/files/galleries/001/a/a5/410545.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Vitaliy",
+      "lastname": "Shevchuk",
+      "age": 27,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://gamebomb.ru/files/galleries/001/a/a5/410545.jpg"
+    }
+  ]
 }

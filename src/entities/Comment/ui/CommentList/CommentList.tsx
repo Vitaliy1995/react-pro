@@ -12,16 +12,37 @@ interface CommentListProps {
     isLoading?: boolean;
 }
 
-export const CommentList = ({ className, comments, isLoading }: CommentListProps) => (
-    <div className={classNames(cls.CommentList, {}, [className])}>
-        {comments?.length
-            ? comments.map((comment) => (
+export const CommentList = ({ className, comments, isLoading }: CommentListProps) => {
+    if (isLoading) {
+        return (
+            <div className={classNames(cls.CommentList, {}, [className])}>
                 <CommentCard
                     className={cls.comment}
-                    comment={comment}
-                    isLoading={isLoading}
+                    isLoading
                 />
-            ))
-            : <Text text="Нет комментариев" />}
-    </div>
-);
+                <CommentCard
+                    className={cls.comment}
+                    isLoading
+                />
+                <CommentCard
+                    className={cls.comment}
+                    isLoading
+                />
+            </div>
+        );
+    }
+
+    return (
+        <div className={classNames(cls.CommentList, {}, [className])}>
+            {comments?.length
+                ? comments.map((comment) => (
+                    <CommentCard
+                        className={cls.comment}
+                        comment={comment}
+                        isLoading={isLoading}
+                    />
+                ))
+                : <Text text="Нет комментариев" />}
+        </div>
+    );
+};
