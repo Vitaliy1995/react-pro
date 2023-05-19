@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
+import { ArticleList } from 'entities/Article';
 import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
@@ -9,7 +10,7 @@ interface ArticlesPageProps {
 
 const ArticlesPage = ({ className }: ArticlesPageProps) => (
     <div className={classNames(cls.ArticlesPage, {}, [className])}>
-        Articles page
+        <ArticleList articles={[]} />
     </div>
 );
 
