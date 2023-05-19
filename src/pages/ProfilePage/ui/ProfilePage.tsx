@@ -21,6 +21,7 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page/Page';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 import cls from './ProfilePage.module.scss';
 
@@ -90,7 +91,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.ProfilePage, {}, [className])}>
+            <Page className={classNames(cls.ProfilePage, {}, [className])}>
                 <ProfilePageHeader />
 
                 {validateErrors?.length && validateErrors.map((err) => (
@@ -115,7 +116,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                     onChangeCountry={onChangeCountry}
                     readonly={readonly}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

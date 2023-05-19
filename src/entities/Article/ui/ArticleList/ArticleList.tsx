@@ -16,22 +16,6 @@ interface ArticleListProps {
 export const ArticleList = ({
     className, articles, isLoading, view = ArticleView.BIG,
 }: ArticleListProps) => {
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                {new Array(view === ArticleView.SMALL ? 9 : 3)
-                    .fill(0)
-                    .map((item, id) => (
-                        <ArticleListItemSkeleton
-                            className={cls.card}
-                            key={id}
-                            view={view}
-                        />
-                    ))}
-            </div>
-        );
-    }
-
     const renderArticle = (article: Article) => (
         <ArticleListItem
             className={cls.card}
@@ -46,6 +30,20 @@ export const ArticleList = ({
             {articles.length
                 ? articles.map(renderArticle)
                 : null}
+
+            {isLoading && (
+                <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+                    {new Array(view === ArticleView.SMALL ? 9 : 3)
+                        .fill(0)
+                        .map((item, id) => (
+                            <ArticleListItemSkeleton
+                                className={cls.card}
+                                key={id}
+                                view={view}
+                            />
+                        ))}
+                </div>
+            )}
         </div>
     );
 };
