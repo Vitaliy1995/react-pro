@@ -12,7 +12,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
     'login/loginByUsername',
     async (authData, { extra, dispatch, rejectWithValue }) => {
         try {
-            const response = await extra.api.post('http://localhost:8080/login', authData);
+            const response = await extra.api.post('/login', authData);
 
             if (!response.data) {
                 throw new Error('No data');

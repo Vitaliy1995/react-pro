@@ -14,18 +14,18 @@ interface ArticleViewSelectorProps {
     onViewClick?: (view: ArticleView) => void;
 }
 
-const viewTypes = [
-    {
-        view: ArticleView.SMALL,
-        icon: TileIcon,
-    },
-    {
-        view: ArticleView.BIG,
-        icon: ListIcon,
-    },
-];
-
 export const ArticleViewSelector = ({ className, view, onViewClick }: ArticleViewSelectorProps) => {
+    const viewTypes = [
+        {
+            view: ArticleView.SMALL,
+            icon: TileIcon,
+        },
+        {
+            view: ArticleView.BIG,
+            icon: ListIcon,
+        },
+    ];
+
     const onClickHandler = (newView: ArticleView) => () => {
         onViewClick?.(newView);
     };
