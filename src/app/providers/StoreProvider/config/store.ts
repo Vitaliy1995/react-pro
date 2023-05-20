@@ -6,6 +6,7 @@ import { userReducer } from 'entities/User';
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager';
 import { $api } from 'shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
+import { scrollReducer } from 'features/ScrollSave';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
 export function createReduxStore(
@@ -15,6 +16,7 @@ export function createReduxStore(
     const rootReducer: ReducersMapObject<StateSchema> = {
         counter: counterReducer,
         user: userReducer,
+        scroll: scrollReducer,
         ...asyncReducers,
     };
 
