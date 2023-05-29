@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLAttributeAnchorTarget } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import { Article, ArticleView } from 'entities/Article';
@@ -12,10 +12,11 @@ interface ArticleListProps {
     articles: Article[];
     isLoading?: boolean;
     view?: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleList = ({
-    className, articles, isLoading, view = ArticleView.BIG,
+    className, articles, isLoading, view = ArticleView.BIG, target,
 }: ArticleListProps) => {
     const renderArticle = (article: Article) => (
         <ArticleListItem
@@ -23,6 +24,7 @@ export const ArticleList = ({
             key={article.id}
             article={article}
             view={view}
+            target={target}
         />
     );
 
