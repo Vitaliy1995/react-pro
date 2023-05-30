@@ -31,7 +31,7 @@ import {
 } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices';
 import { ArticleDetailsPageHeader } from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import cls from './ArticleDetailsPage.module.scss';
+import cls from './ArticleEditPage.module.scss';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -42,8 +42,9 @@ const reducerList: ReducerList = {
 
 };
 
-const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
+const ArticleEditPage = ({ className }: ArticleDetailsPageProps) => {
     const { id } = useParams<{id: string}>();
+    const isEdit = Boolean(id);
 
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
@@ -89,4 +90,4 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     );
 };
 
-export default memo(ArticleDetailsPage);
+export default memo(ArticleEditPage);
