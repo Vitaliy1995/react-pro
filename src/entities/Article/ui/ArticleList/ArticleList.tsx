@@ -1,10 +1,10 @@
 import React, { HTMLAttributeAnchorTarget } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
-import { Article, ArticleView } from 'entities/Article';
-import { ArticleListItem } from 'entities/Article/ui/ArticleListItem/ArticleListItem';
-import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 import { Text } from 'shared/ui/Text/Text';
+import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+import { Article, ArticleView } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
 
 interface ArticleListProps {

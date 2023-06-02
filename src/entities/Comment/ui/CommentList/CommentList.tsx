@@ -2,8 +2,8 @@ import React from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import { Text } from 'shared/ui/Text/Text';
-import { CommentCard } from 'entities/Comment/ui/CommentCard/CommentCard';
-import { Comment } from 'entities/Comment';
+import { Comment } from '../../model/types/comment';
+import { CommentCard } from '../CommentCard/CommentCard';
 import cls from './CommentList.module.scss';
 
 interface CommentListProps {

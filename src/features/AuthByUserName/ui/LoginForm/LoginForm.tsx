@@ -3,13 +3,13 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
-import { useDispatch, useSelector, useStore } from 'react-redux';
-import { loginActions, loginReducer } from 'features/AuthByUserName/model/slice/loginSlice';
-import { getLoginState } from 'features/AuthByUserName/model/selectors/getLoginState/getLoginState';
-import { loginByUsername } from 'features/AuthByUserName/model/services/loginByUsername/loginByUsername';
+import { useSelector } from 'react-redux';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
+import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {

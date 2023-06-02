@@ -1,18 +1,18 @@
-import React, { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
+import React, { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
-import { Article, ArticleView } from 'entities/Article';
 import { Text } from 'shared/ui/Text/Text';
 import { Icon } from 'shared/ui/Icon/Icon';
 import ViewIcon from 'shared/assets/icons/eye.svg';
 import { Card } from 'shared/ui/Card/Card';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button } from 'shared/ui/Button/Button';
-import { ArticleBlockType, ArticleTextBlock } from 'entities/Article/model/types/article';
-import { ArticleTextBlockComponent } from 'entities/Article/ui/ArticleTextBlock/ArticleTextBlockComponent';
-import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { ArticleTextBlockComponent } from '../ArticleTextBlock/ArticleTextBlockComponent';
+import {
+    ArticleBlockType, ArticleTextBlock, Article, ArticleView,
+} from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
 
 interface ArticleListItemProps {
